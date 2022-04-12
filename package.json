@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Anshul7417/Weather-App#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "hbs": "^4.2.0",
     "nodemon": "^2.0.15"
   }
 }
