@@ -91,6 +91,31 @@ html{
   margin: 1rem 0 4rem 0;
   text-transform: capitalize;
 }
+
+
+.main_header_left .text-clr{
+  color: #0097e6;
+}
+
+.main_header_left button{
+  margin-top: 0.7rem;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.4rem;
+  border: 2rem;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px #000;
+  outline: none;
+
+}
+
+.main_header_left button:hover{
+
+  box-shadow: 0 8px 6px -6px var(--main-color);
+
+
+}
+
 .main_header_right{
   height: 70rem;
   display: flex;
