@@ -1,26 +1,38 @@
 const express=require("express");
 const app= express();
 const path=require("path");
+const hbs=require('hbs');
 const port =process.env.PORT||8000;
 
 const static_path=path.join(__dirname,"../public")
-console.log(static_path)
-app.use(express.static(static_path));
+const template_path=path.join(__dirname,"../templates/views")
+const partials_path=path.join(__dirname,"../templates/partials")
+
+
+
+app.set('view engine','hbs');
+app.set('views',template_path); 
+hbs.registerPartials(partials_path);
+
+app.use(express.static(static_path));  //for css files
+
 
 
 
 //routing
 app.get("/",(req,res)=>{
-    res.send("hello anshul");
+    res.render("index");
 })
 app.get("/about",(req,res)=>{
-    res.send("hello anshul from about");
+    res.render("about");
 })
 app.get("/weather",(req,res)=>{
-    res.send("hello anshul from about");
+    res.render("weather");
 })
 app.get("*",(req,res)=>{
-    res.send("404 error page oops");
+    res.render("error",{
+        errorMsg: "Oops Page Not Found"
+    });
 })
 
 
